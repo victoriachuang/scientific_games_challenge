@@ -1,6 +1,12 @@
 # write to file: name, birth year, death year
 
 
+# create dictionary => key is each year
+birth_year_tally = {}
+for i in range(1900, 2001):
+	birth_year_tally[i] = 0
+
+# print birth_year_tally
 
 # "tally" years that each person was alive
 
