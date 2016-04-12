@@ -1,13 +1,16 @@
 import json
 import operator
 
+MIN_YEAR = 1900
+MAX_YEAR = 2000
+
 # open json file
 with open('data.json') as data_file:
 	data = json.load(data_file)
 
 # create dictionary => key is each year, initialize each value to 0
 birth_year_tally = {}
-for i in range(1900, 2001):
+for i in range(MIN_YEAR, MAX_YEAR + 1):
 	birth_year_tally[i] = 0
 
 # "tally" years that each person was alive
@@ -17,5 +20,5 @@ for person in data:
 			birth_year_tally[key] += 1
 
 # return key with max value
-max_year = max(birth_year_tally.iteritems(), key=operator.itemgetter(1))[0]
-print max_year
+mode_year = max(birth_year_tally.iteritems(), key=operator.itemgetter(1))[0]
+print mode_year
