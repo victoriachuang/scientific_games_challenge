@@ -20,6 +20,7 @@ for person in data:
 			birth_year_tally[key] += 1
 
 # return all keys with max value
+# find key with the max value and append all keys with the same value to a result list
 max_population_year = max(birth_year_tally, key=birth_year_tally.get)
 all_max_keys = []
 for year in birth_year_tally:
