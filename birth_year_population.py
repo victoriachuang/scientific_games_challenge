@@ -19,6 +19,11 @@ for person in data:
 		if key >= person["birth_year"] and key <= person["death_year"]:
 			birth_year_tally[key] += 1
 
-# return key with max value
-mode_year = max(birth_year_tally.iteritems(), key=operator.itemgetter(1))[0]
-print mode_year
+# return all keys with max value
+max_population_year = max(birth_year_tally, key=birth_year_tally.get)
+all_max_keys = []
+for year in birth_year_tally:
+	if birth_year_tally[year] == birth_year_tally[max_population_year]:
+		all_max_keys.append(year)
+
+print all_max_keys
