@@ -3,6 +3,11 @@ import operator
 
 # write to file: name, birth year, death year
 
+# generate birth and death years between 1900 and 2000
+# death year must be equal to or after birth year
+start = (random() * 100) + 1900
+end = ((2000 - start) * random()) + start
+
 # open json file
 with open('data_set.json') as data_file:
 	data = json.load(data_file)
