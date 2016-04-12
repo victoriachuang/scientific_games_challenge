@@ -1,6 +1,8 @@
 import json
 
 # write to file: name, birth year, death year
+# generate birth and death years between 1900 and 2000
+# death year must be equal to or after birth year
 with open("data.json", "w") as outfile:
 	for i in range(0, 1000):	
 		start = int((random.random() * 100)) + 1900

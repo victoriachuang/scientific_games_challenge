@@ -2,11 +2,6 @@ import random
 import json
 import operator
 
-
-# generate birth and death years between 1900 and 2000
-# death year must be equal to or after birth year
-
-
 # open json file
 with open('data.json') as data_file:
 	data = json.load(data_file)
