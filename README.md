@@ -12,7 +12,7 @@ In both the data generation and mode year scripts, I factored out certain variab
 
 ## Data generation
 
-In `data_set_generation.py`, I create a JSON file to hold sample data, which `birth_year_population.py` will read from.
+In `data_set_generation.py`, I created a JSON file to hold sample data, which `birth_year_population.py` will read from.
 I chose to generate the data set as an array of JSON, since that’s how many APIs feed their data.
 Because the birth and end years are contained in the range of 1900 to 2000, I decided to not make realistic lifespans a priority; there would be a lot of overlapping lifespan years and the program would return more than half of the dates available.
 However, the end year must be greater than or equal to the birth year. 
@@ -22,4 +22,10 @@ However, the end year must be greater than or equal to the birth year.
 I structured my tally of when each person was alive as a dictionary, as opposed to an array, for readability; the key could be stored as the year itself, without having to convert indices into the year.
 
 ## Possible improvements
+
+
+### TODOs: April 12
+* Random name generation
+* Write main
+* Handle multiple maximum years
 
