@@ -4,28 +4,21 @@ Challenge: Given a list of people with their birth and end years, all between 19
 
 ## Use
 
-Run `python main.py`.
+Run `python main.py`. The script will return an array of the years during which the most people were alive. For readability in the command line, I've printed the return value.
 
-## Design decisions
+## `main.py`
 
-In both the data generation and mode year scripts, I factored out certain variables to be constants, such as the maximum and minimum years, to improve readability. This would also allow for easy adjustments in the event that we want to change the year range or the sample data size.
+Inside `main.py`, I've declared a function that takes a JSON file containing a list of names, birth years and end years. The function creates a dictionary of all possible years in a range defined by starting and ending year constants, and initializes the "tally" for each year to 0.
+
+The function then iterates through the JSON file; for each year the each person was alive, the program will increment the count of the number of people alive during that year.
+
+Then, to find the year with the most people alive, we find the key in the birth year tally dictionary with the highest value. However, Python's built-in method to retrieve the key with the maximum value will only return the **first** instance of the maximum value, which could potentially exclude multiple modes. In order to retrieve every instance of the maximum value, we find the key with the maximum value first, and then iterate through the birth year tally dictionary again; for each key whose value matches that of the maximum value, we store the key in a "result" array.
 
 ## Data generation
 
-In `data_set_generation.py`, I created a JSON file to hold sample data, which `birth_year_population.py` will read from.
-I chose to generate the data set as an array of JSON, since that’s how many APIs feed their data.
-Because the birth and end years are contained in the range of 1900 to 2000, I decided to not make realistic lifespans a priority; there would be a lot of overlapping lifespan years and the program would return more than half of the dates available.
-However, the end year must be greater than or equal to the birth year. 
+`data_set_generation.py` creates a JSON file 
 
 ## Birth year count
 
 I structured my tally of when each person was alive as a dictionary, as opposed to an array, for readability; the key could be stored as the year itself, without having to convert indices into the year.
-
-## Possible improvements
-
-
-### TODOs: April 12
-* Random name generation
-* Write main
-* Handle multiple maximum years
 
