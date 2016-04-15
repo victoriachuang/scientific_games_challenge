@@ -1,8 +1,0 @@
-- didn't include graphs because user may not have numpy or matplotlib installed
-- decided to create data sets as json because that's how most APIs feed data
-- dictionary rather than array for readability, no need to convert index to year, etc.
-- factored out year range and data size for readability -  easier to readjust (data set and size) and (dictionary range)
-
-
-TODOs
-- edge cases => multiple years with same number of people
