@@ -16,9 +16,8 @@ Then, to find the year with the most people alive, we find the key in the birth 
 
 ## Data generation
 
-`data_set_generation.py` creates a JSON file 
+`data_set_generation.py` creates a JSON file containing 1000 records of names, birth years and end years.
 
-## Birth year count
+Names are randomly selected from arrays of sample names.
 
-I structured my tally of when each person was alive as a dictionary, as opposed to an array, for readability; the key could be stored as the year itself, without having to convert indices into the year.
-
+The birth and end years are selected using the `random` library, using the minimum year as a "base" and casted as integers.
